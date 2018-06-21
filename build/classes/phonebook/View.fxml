@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="anchorPane" fx:id="anchorPane" maxHeight="690.0" maxWidth="950.0" prefHeight="690.0" prefWidth="950.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="phonebook.ViewController">
+    <children>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" height="49.0" stroke="BLACK" strokeType="INSIDE" width="950.0">
+         <fill>
+            <RadialGradient centerX="0.5166666666666667" centerY="0.4380952380952381" cycleMethod="REFLECT" focusAngle="-108.43" radius="0.5">
+               <stops>
+                  <Stop color="WHITE" />
+                  <Stop color="#b24bdeaa" offset="0.5991231188529447" />
+                  <Stop color="#ead7f2" offset="0.6563573883161511" />
+                  <Stop color="#cd8de8" offset="0.7258363945175179" />
+                  <Stop color="#b24bde45" offset="0.7320772603389011" />
+                  <Stop color="#b348e0" offset="1.0" />
+               </stops>
+            </RadialGradient>
+         </fill>
+      </Rectangle>
+        <Label alignment="TOP_CENTER" contentDisplay="CENTER" layoutX="354.0" layoutY="-6.0" minHeight="16" minWidth="69" text="Telefonkönyv" textAlignment="CENTER" textOverrun="CENTER_ELLIPSIS">
+         <font>
+            <Font name="Kunstler Script" size="45.0" />
+         </font></Label>
+      <SplitPane id="splitPane" fx:id="splitPane" dividerPositions="0.23248407643312102" layoutY="49.0" maxWidth="950.0" prefHeight="641.0" prefWidth="950.0">
+        <items>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+               <children>
+                  <StackPane id="menuPane" fx:id="menuPane" maxHeight="599.0" maxWidth="143.0" prefHeight="599.0" prefWidth="143.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+               </children>
+            </AnchorPane>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+               <children>
+                  <Pane id="exportPane" fx:id="exportPane" layoutX="51.0" maxHeight="600.0" maxWidth="650.0" prefHeight="600.0" prefWidth="650.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <children>
+                        <Label layoutX="188.0" layoutY="62.0" text="Lista mentése PDF fájlba">
+                           <font>
+                              <Font size="24.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="265.0" layoutY="142.0" text="PDF neve:">
+                           <font>
+                              <Font size="20.0" />
+                           </font>
+                        </Label>
+                        <TextField id="inputPdfName" fx:id="inputPdfName" layoutX="177.0" layoutY="181.0" prefHeight="25.0" prefWidth="266.0" />
+                        <Button id="pdfButton" fx:id="pdfButton" layoutX="245.0" layoutY="252.0" mnemonicParsing="false" onAction="#newPdf" prefHeight="48.0" prefWidth="127.0" text="Mentés" />
+                     </children></Pane>
+                  <Pane id="contactPane" fx:id="contactPane" maxHeight="600.0" maxWidth="650.0" prefHeight="600.0" prefWidth="650.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <children>
+                        <TableView id="table" fx:id="table" editable="true" layoutX="7.0" maxHeight="440.0" maxWidth="716.0" prefHeight="440.0" prefWidth="716.0">
+                          <placeholder>
+                             <Label text="Nincs adat" />
+                          </placeholder>
+                        </TableView>
+                        <Label alignment="CENTER_RIGHT" layoutX="46.0" layoutY="474.0" prefHeight="14.0" prefWidth="106.0" text="Vezetéknév:">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </Label>
+                        <Label alignment="CENTER_RIGHT" layoutX="46.0" layoutY="512.0" prefHeight="14.0" prefWidth="106.0" text="Keresztnév:">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </Label>
+                        <Label alignment="CENTER_RIGHT" layoutX="46.0" layoutY="546.0" prefHeight="14.0" prefWidth="106.0" text="Email:">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </Label>
+                        <TextField id="inputLastName" fx:id="inputLastName" layoutX="164.0" layoutY="474.0" prefHeight="25.0" prefWidth="151.0" promptText="Vezetéknév" />
+                        <TextField id="inputFirstName" fx:id="inputFirstName" layoutX="164.0" layoutY="512.0" prefHeight="25.0" prefWidth="151.0" promptText="Keresztnév" />
+                        <TextField id="inputEmail" fx:id="inputEmail" layoutX="164.0" layoutY="546.0" prefHeight="25.0" prefWidth="151.0" promptText="email@gmail.com" />
+                        <Button id="newContactButton" fx:id="newContactButton" layoutX="371.0" layoutY="527.0" mnemonicParsing="false" onAction="#newContact" prefHeight="38.0" prefWidth="95.0" text="Új kontakt" />
+                        <Label alignment="CENTER_RIGHT" layoutX="46.0" layoutY="584.0" prefHeight="14.0" prefWidth="106.0" text="Telefonszám:">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </Label>
+                        <TextField id="inputMobile" fx:id="inputMobile" layoutX="164.0" layoutY="584.0" prefHeight="25.0" prefWidth="151.0" promptText="+36/30-XX-XX-XXX" />
+                     </children>
+                  </Pane>
+               </children>
+            </AnchorPane>
+        </items>
+      </SplitPane>
+    </children>
+</AnchorPane>
